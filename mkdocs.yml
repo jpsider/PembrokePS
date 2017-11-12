@@ -1,0 +1,11 @@
+site_name: PembrokePS
+repo_url: https://github.com/jpsider/PembrokePS
+theme: readthedocs
+pages:
+- Home: index.md
+- PembrokePS Basics:
+  - What is PembrokePS: about.md
+  - Quick Start: Quick-Start-Installation-and-Example.md
+- Basic Commands:
+- Examples:
+- Acknowledgements: acknowledgements.md
