@@ -95,6 +95,11 @@ VALUES
 (1,'SampleTask','SampleTask.ps1',11,1),
 (2,'SampleDisabledTask','SampleDisabledTask.ps1',12,2);
 
+INSERT INTO SUBTASK_GENERATOR (ID,TASK_TYPE_ID,Pass_SubTask_ID,Fail_SubTask_ID,Status_ID)
+VALUES
+(1,1,1,2,11),
+(2,2,1,2,11);
+
 INSERT INTO QMAN_TASK_TYPES (ID,QUEUE_MANAGER_TYPE_ID,TASK_TYPE_ID,STATUS_ID)
 VALUES
 (1,1,1,11),
