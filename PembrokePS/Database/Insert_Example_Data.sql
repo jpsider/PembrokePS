@@ -46,10 +46,10 @@ VALUES
 (1,'Primary','Tasks'),
 (2,'Admin','Tasks');
 
-INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,Wait,Log_File,QMan_Description)
+INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,Wait,Kicker_Wait,Log_File,QMan_Description)
 VALUES
-(1,1,1,2,1,1,300,'NoLog','Primary Task Queue Manager'),
-(2,2,3,4,1,1,300,'NoLog','Admin Task Queue Manager');
+(1,1,1,2,1,1,300,300,'NoLog','Primary Task Queue Manager'),
+(2,2,3,4,1,1,300,300,'NoLog','Admin Task Queue Manager');
 
 INSERT INTO WORKFLOW_MANAGER_TYPE (ID,Name,TableName) 
 VALUES
@@ -90,10 +90,10 @@ INSERT INTO TARGETS (ID,Target_Name,Target_Type_ID,IP_Address,STATUS_ID,Password
 VALUES 
 (1,'ProductionSystem',1,'127.0.0.1',11,1,1,'Production System');
 
-INSERT INTO TASK_TYPES (ID,Task_Name,Task_Path,STATUS_ID,PRIORITY)
+INSERT INTO TASK_TYPES (ID,Task_Name,Task_Path,STATUS_ID,MAX_Retries,PRIORITY)
 VALUES
-(1,'SampleTask','SampleTask.ps1',11,1),
-(2,'SampleDisabledTask','SampleDisabledTask.ps1',12,2);
+(1,'SampleTask','SampleTask.ps1',11,0,1),
+(2,'SampleDisabledTask','SampleDisabledTask.ps1',12,1,2);
 
 INSERT INTO SUBTASK_GENERATOR (ID,TASK_TYPE_ID,Pass_SubTask_ID,Fail_SubTask_ID,Status_ID)
 VALUES
