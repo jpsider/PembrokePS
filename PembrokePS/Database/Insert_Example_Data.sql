@@ -13,7 +13,8 @@ VALUES
 (9,'Complete','#00CC66','LightGreen'),
 (10,'Cancelled','#333333','Charcoal'),
 (11,'Enabled','#006633','Green'),
-(12,'Disabled','#CC0000','Red');
+(12,'Disabled','#CC0000','Red'),
+(13,'Available','#CC0000','Red');
 
 INSERT INTO RESULTS (ID, Result_Name, HtmlColor, HTML_Description) 
 VALUES 
@@ -39,7 +40,9 @@ VALUES
 (5,8005,7,8),
 (6,8006,7,8),
 (7,8007,7,8),
-(8,8008,7,8);
+(8,8008,7,8),
+(9,8009,13,1),
+(10,8010,13,1);
 
 INSERT INTO QUEUE_MANAGER_TYPE (ID,Name,TableName) 
 VALUES
