@@ -14,7 +14,7 @@ VALUES
 (10,'Cancelled','#333333','Charcoal'),
 (11,'Enabled','#006633','Green'),
 (12,'Disabled','#CC0000','Red'),
-(13,'Available','#CC0000','Red');
+(13,'Available','#006633','Green');
 
 INSERT INTO RESULTS (ID, Result_Name, HtmlColor, HTML_Description) 
 VALUES 
@@ -59,10 +59,10 @@ VALUES
 (1,'Primary','Tasks'),
 (2,'Admin','Tasks');
 
-INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,Wait,Max_Concurrent_Tasks,Log_File,WMan_Description)
+INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,Wait,Kicker_Wait,Max_Concurrent_Tasks,Log_File,WMan_Description)
 VALUES
-(1,1,5,6,1,1,300,4,'NoLog','Primary WorkFlow Manager'),
-(2,1,7,8,1,1,300,4,'NoLog','Admin WorkFlow Manager');
+(1,1,5,6,1,1,300,300,4,'NoLog','Primary WorkFlow Manager'),
+(2,1,7,8,1,1,300,300,4,'NoLog','Admin WorkFlow Manager');
 
 INSERT INTO PASSWORDS (ID,Username,Password)
 VALUES

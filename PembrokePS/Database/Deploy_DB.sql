@@ -103,6 +103,7 @@ CREATE TABLE WORKFLOW_MANAGER
   KICKER_PORT_ID int (11),
   STATUS_ID int (11) NOT NULL,
   KICKER_STATUS_ID int (11) NOT NULL,
+  Kicker_Wait int (11) NOT NULL,
   Wait int (11) NOT NULL,
   Max_Concurrent_Tasks int (11) NOT NULL,
   Log_File varchar (255),
