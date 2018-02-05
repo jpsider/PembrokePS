@@ -49,20 +49,21 @@ VALUES
 (1,'Primary','Tasks'),
 (2,'Admin','Tasks');
 
-INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,Wait,Kicker_Wait,Log_File,QMan_Description)
+INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,HostName,IP_Address,Wait,Kicker_Wait,Log_File,QMan_Description)
 VALUES
-(1,1,1,2,1,1,300,300,'NoLog','Primary Task Queue Manager'),
-(2,2,3,4,1,1,300,300,'NoLog','Admin Task Queue Manager');
+(1,1,1,2,1,1,'localhost','127.0.0.1',300,300,'NoLog','Primary Task Queue Manager'),
+(2,2,3,4,1,1,'localhost','127.0.0.1',300,300,'NoLog','Admin Task Queue Manager');
 
 INSERT INTO WORKFLOW_MANAGER_TYPE (ID,Name,TableName) 
 VALUES
 (1,'Primary','Tasks'),
 (2,'Admin','Tasks');
 
-INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,Wait,Kicker_Wait,Max_Concurrent_Tasks,Log_File,WMan_Description)
+INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,HostName,IP_Address,Wait,Kicker_Wait,Max_Concurrent_Tasks,Log_File,WMan_Description)
 VALUES
-(1,1,5,6,1,1,300,300,4,'NoLog','Primary WorkFlow Manager'),
-(2,1,7,8,1,1,300,300,4,'NoLog','Admin WorkFlow Manager');
+(1,1,5,6,1,1,'localhost','127.0.0.1',300,300,4,'NoLog','Primary WorkFlow Manager'),
+(2,2,7,8,1,1,'localhost','127.0.0.1',300,300,4,'NoLog','Admin WorkFlow Manager'),
+(9999,2,7,8,1,1,'localhost','127.0.0.1',300,300,9999,'NoLog','UnAssigned');
 
 INSERT INTO PASSWORDS (ID,Username,Password)
 VALUES
@@ -80,6 +81,15 @@ VALUES
 (8,'DSCluster',11),
 (9,'Network',11);
 
+INSERT INTO PARENT_TARGET_TYPES (ID,Parent_Target_Type_ID,Child_Target_Type_ID,STATUS_ID)
+VALUES
+(1,2,3,11),
+(2,2,4,11),
+(3,2,6,11),
+(4,2,7,11),
+(5,2,8,11),
+(6,1,2,11);
+
 INSERT INTO SYSTEMS (ID,SYSTEM_Name,STATUS_ID)
 VALUES 
 (1,'HomeLab',11),
@@ -93,10 +103,10 @@ INSERT INTO TARGETS (ID,Target_Name,Target_Type_ID,IP_Address,STATUS_ID,Password
 VALUES 
 (1,'ProductionSystem',1,'127.0.0.1',11,1,1,'Production System');
 
-INSERT INTO TASK_TYPES (ID,Task_Name,Task_Path,STATUS_ID,MAX_Retries,PRIORITY)
+INSERT INTO TASK_TYPES (ID,Task_Name,Task_Path,STATUS_ID,PRIORITY)
 VALUES
-(1,'SampleTask','SampleTask.ps1',11,0,1),
-(2,'SampleDisabledTask','SampleDisabledTask.ps1',12,1,2);
+(1,'SampleTask','SampleTask.ps1',11,1),
+(2,'SampleDisabledTask','SampleDisabledTask.ps1',12,2);
 
 INSERT INTO SUBTASK_GENERATOR (ID,TASK_TYPE_ID,Pass_SubTask_ID,Fail_SubTask_ID,Status_ID)
 VALUES
@@ -116,6 +126,12 @@ VALUES
 (2,1,2,12),
 (3,2,1,12),
 (4,2,2,11);
+
+INSERT INTO TARGET_TASKS_TYPES (ID,TARGET_TYPES_ID,TASK_TYPE_ID,STATUS_ID,MAX_Retries)
+VALUES
+(1,1,1,11,3),
+(2,1,2,11,3),
+(3,2,1,12,3);
 
 INSERT INTO Tasks (ID,STATUS_ID,RESULT_ID,Log_File,WORKFLOW_MANAGER_ID,TASK_TYPE_ID,TARGET_ID,Arguments,Hidden)
 VALUES
