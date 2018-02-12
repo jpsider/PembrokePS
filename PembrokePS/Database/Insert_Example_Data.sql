@@ -147,18 +147,53 @@ VALUES
 INSERT INTO MANAGED_FILES (ID,FILE_NAME,FILE_PATH,FILE_HASH,REBOOT_REQUIRED,STATUS_ID)
 VALUES
 (1,'testfile.ps1','c:\\pembrokeps\\scripts\\','someHash',0,11),
-(2,'testfile.ps1','c:\\pembrokeps\\scripts\\','badhash',1,12);
+(2,'testfile.ps1','c:\\pembrokeps\\scripts\\','badhash',1,12),
+(3,'QMtestfile.ps1','c:\\pembrokeps\\scripts\\','badhash',1,12),
+(4,'WMtestfile.ps1','c:\\pembrokeps\\scripts\\','badhash',1,12);
+
+INSERT INTO MANAGED_FILE_QM_GROUPS (ID,MANAGED_FILE_ID,QUEUE_MANAGER_TYPE_ID)
+VALUES
+(1,1,1),
+(2,2,2),
+(3,2,1),
+(4,3,2);
+
+INSERT INTO MANAGED_FILE_WM_GROUPS (ID,MANAGED_FILE_ID,WORKFLOW_MANAGER_TYPE_ID)
+VALUES
+(1,1,1),
+(2,2,2),
+(3,1,1),
+(4,4,2);
 
 INSERT INTO QUEUE_MANAGER_FILES (ID,QUEUE_MANAGER_ID,MANAGED_FILE_ID,QUEUE_MGR_HASH,RESULT_ID)
 VALUES
 (1,1,1,'somehash',6),
 (2,1,2,'somehash',2),
 (3,2,1,'somehash',2),
-(4,2,2,'badhash',6);
+(4,2,3,'badhash',6);
 
 INSERT INTO WORKFLOW_MANAGER_FILES (ID,WORKFLOW_MANAGER_ID,MANAGED_FILE_ID,WORKFLOW_MGR_HASH,RESULT_ID)
 VALUES
 (1,1,1,'somehash',6),
 (2,1,2,'somehash',2),
 (3,2,1,'somehash',2),
-(4,2,2,'badhash',6);
+(4,2,4,'badhash',6);
+
+INSERT INTO ADDITIONAL_PS_MODULES (ID,Name,GALLERY_NAME,MODULE_VERSION,STATUS_ID)
+VALUES
+(1,'PowerCLI','vmware.powercli','Latest',11),
+(2,'PowerCLIcore','vmware.powercliCore','Latest',12);
+
+INSERT INTO WORKFLOW_MANAGER_ADDL_MODULES (ID,ADDL_MODULE_ID,WORKFLOW_MANAGER_TYPE_ID,STATUS_ID)
+VALUES
+(1,1,1,11),
+(2,2,1,12),
+(3,1,2,11),
+(4,2,2,12);
+
+INSERT INTO WORKFLOW_MANAGER_ADDL_MODULES_STATUS (ID,WORKFLOW_MANAGER_ID,ADDL_MODULE_ID,RESULT_ID)
+VALUES
+(1,1,1,1),
+(2,1,2,2),
+(3,2,1,1),
+(4,2,2,2);
