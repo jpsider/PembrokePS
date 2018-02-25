@@ -16,7 +16,7 @@ set DB_USER=root
 goto :MAIN
 
 :CreateDatabase
-call %MYSQL_EXE% -u %DB_USER% < "Deploy_DB.sql"
+call %MYSQL_EXE% -u %DB_USER% < "PembrokePS_Schema.sql"
 goto :EOF
 
 :InsertDemoData
