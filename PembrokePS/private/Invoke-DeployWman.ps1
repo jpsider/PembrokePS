@@ -1,4 +1,4 @@
-function Invoke-DeployDB
+function Invoke-DeployWman
 {
     <#
 	.DESCRIPTION

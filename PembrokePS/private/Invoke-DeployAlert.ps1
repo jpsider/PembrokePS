@@ -1,4 +1,4 @@
-function Invoke-DeployDB
+function Invoke-DeployAlert
 {
     <#
 	.DESCRIPTION
@@ -8,7 +8,7 @@ function Invoke-DeployDB
     .PARAMETER Source
         A valid Path is required.
 	.EXAMPLE
-        Invoke-DeployDB -Destination c:\wamp\www\PembrokePS -Source c:\OpenProjects\ProjectPembroke\PembrokePSUI
+        Invoke-DeployAlert -Destination c:\wamp\www\PembrokePS -Source c:\OpenProjects\ProjectPembroke\PembrokePSUI
 	.NOTES
         It will create the directory if it does not exist.
     #>
