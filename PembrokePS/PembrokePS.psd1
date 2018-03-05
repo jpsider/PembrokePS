@@ -51,7 +51,7 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    #RequiredModules   = @('PembrokePSalert', 'PembrokePSqman', 'PembrokePSrest', 'PembrokePSsched', 'PembrokePSui', 'PembrokePSwman')
+    #RequiredModules   = @('PembrokePSalert', 'PembrokePSqman', 'PembrokePSrest', 'PembrokePSsched', 'PembrokePSui', 'PembrokePSutilities', 'PembrokePSwman', 'PowerLumber')
     #RequiredModules   = @('PembrokePSui')
 
     # Assemblies that must be loaded prior to importing this module
