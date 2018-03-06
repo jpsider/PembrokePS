@@ -14,7 +14,8 @@ VALUES
 (10,'Cancelled','#333333','Charcoal'),
 (11,'Enabled','#006633','Green'),
 (12,'Disabled','#CC0000','Red'),
-(13,'Available','#006633','Green');
+(13,'Available','#006633','Green'),
+(14,'Staged','#99CCFF','Light Blue');
 
 INSERT INTO RESULTS (ID,RESULT_NAME,HTMLCOLOR,HTML_Description) 
 VALUES 
