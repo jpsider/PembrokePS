@@ -22,7 +22,7 @@ VALUES
 (1,'PASS','#006633','Green'),
 (2,'FAIL','#CC0000','Red'),
 (3,'CRITICAL','#FFFF00','Yellow'),
-(4,'AGENT_ERROR','#9933FF','Purple'),
+(4,'SYSTEM_ERROR','#9933FF','Purple'),
 (5,'ABORTED','#FF6600','Orange'),
 (6,'UNKNOWN','#666666','Grey'),
 (7,'INSYNC','#006633','Green');
