@@ -53,18 +53,18 @@ VALUES
 
 INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,LOG_FILE,QMan_Description)
 VALUES
-(1,1,1,2,1,1,'localhost','127.0.0.1',300,300,'NoLog','Primary TASK Queue Manager'),
-(2,2,3,4,1,1,'localhost','127.0.0.1',300,300,'NoLog','Admin TASK Queue Manager');
+(1,1,1,2,1,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Primary TASK Queue Manager'),
+(2,2,3,4,1,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Admin TASK Queue Manager');
 
 INSERT INTO WORKFLOW_MANAGER_TYPE (ID,NAME,TABLENAME) 
 VALUES
-(1,'Primary','TASKs'),
-(2,'Admin','TASKs');
+(1,'Primary','TASKS'),
+(2,'Admin','TASKS');
 
 INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,MAX_CONCURRENT_TASKS,LOG_FILE,WMan_Description)
 VALUES
-(1,1,5,6,1,1,'localhost','127.0.0.1',300,300,4,'NoLog','Primary WorkFlow Manager'),
-(2,2,7,8,1,1,'localhost','127.0.0.1',300,300,4,'NoLog','Admin WorkFlow Manager'),
+(1,1,5,6,1,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_1.log','Primary WorkFlow Manager'),
+(2,2,7,8,1,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_2.log','Admin WorkFlow Manager'),
 (9999,2,7,8,1,1,'localhost','127.0.0.1',300,300,9999,'NoLog','UnAssigned');
 
 INSERT INTO PASSWORDS (ID,USERNAME,PASSWORD)
@@ -107,33 +107,42 @@ VALUES
 
 INSERT INTO TASK_TYPES (ID,TASK_NAME,TASK_PATH,STATUS_ID,PRIORITY)
 VALUES
-(1,'SampleTASK','SampleTASK.ps1',11,1),
-(2,'SampleDisabledTASK','SampleDisabledTASK.ps1',12,2);
+(1,'SamplePassTask','SamplePassTask.ps1',11,1),
+(2,'SampleFailTask','SampleFailTask.ps1',11,2),
+(3,'SampleCriticalTask','SampleCriticalTask.ps1',11,3),
+(4,'SampleMissingTask','SampleMissingTask.ps1',12,4);
 
 INSERT INTO SUBTASK_GENERATOR (ID,TASK_TYPE_ID,PASS_SUBTASK_ID,FAIL_SUBTASK_ID,STATUS_ID)
 VALUES
-(1,1,1,2,11),
-(2,2,1,2,11);
+(1,1,2,2,11),
+(2,2,3,3,11),
+(3,3,4,4,11);
 
 INSERT INTO QMAN_TASK_TYPES (ID,QUEUE_MANAGER_TYPE_ID,TASK_TYPE_ID,STATUS_ID)
 VALUES
 (1,1,1,11),
 (2,1,2,12),
 (3,2,1,12),
-(4,2,2,11);
+(4,2,2,11),
+(5,1,3,11),
+(6,1,4,12);
 
 INSERT INTO WMAN_TASK_TYPES (ID,WORKFLOW_MANAGER_TYPE_ID,TASK_TYPE_ID,STATUS_ID)
 VALUES
 (1,1,1,11),
 (2,1,2,12),
 (3,2,1,12),
-(4,2,2,11);
+(4,2,2,11),
+(5,1,3,11),
+(6,1,4,12);
 
 INSERT INTO TARGET_TASKS_TYPES (ID,TARGET_TYPE_ID,TASK_TYPE_ID,STATUS_ID,MAX_Retries)
 VALUES
 (1,1,1,11,3),
 (2,1,2,11,3),
-(3,2,1,12,3);
+(3,2,1,12,3),
+(4,1,3,11,3),
+(5,1,4,11,3);
 
 INSERT INTO TASKS (ID,STATUS_ID,RESULT_ID,LOG_FILE,WORKFLOW_MANAGER_ID,TASK_TYPE_ID,TARGET_ID,ARGUMENTS,HIDDEN)
 VALUES
