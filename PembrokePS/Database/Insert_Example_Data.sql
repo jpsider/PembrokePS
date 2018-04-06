@@ -34,7 +34,7 @@ VALUES
 (3,'WelcomeMessage','You can disable this message.',11),
 (4,'system.Root','c:\\PembrokePS',11),
 (5,'system.LogDirectory','c:\\PembrokePS\\Logs\\Tasks',11),
-(6,'system.RequiredModules','',11),
+(6,'system.RequiredModules','PembrokePSrest,PembrokePSutilities,PowerLumber,RestPS',11),
 (7,'system.RunLogLevel','DEBUG',11);
 
 INSERT INTO ENDPOINT_PORTS (ID,PORT,ENDPOINT_ASSIGNED_STATUS,ENDPOINT_STATUS) 
