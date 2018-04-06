@@ -31,7 +31,11 @@ INSERT INTO PROPERTIES (ID,PROP_NAME,PROP_VALUE,STATUS_ID)
 VALUES
 (1,'FakePropertyEnabled','FakeValue',11),
 (2,'FakePropertyDisabled','FakeValue',12),
-(3,'WelcomeMessage','You can disable this message.',11);
+(3,'WelcomeMessage','You can disable this message.',11),
+(4,'system.Root','c:\\PembrokePS',11),
+(5,'system.LogDirectory','c:\\PembrokePS\\Logs\\Tasks',11),
+(6,'system.RequiredModules','',11),
+(7,'system.RunLogLevel','DEBUG',11);
 
 INSERT INTO ENDPOINT_PORTS (ID,PORT,ENDPOINT_ASSIGNED_STATUS,ENDPOINT_STATUS) 
 VALUES
@@ -51,21 +55,21 @@ VALUES
 (1,'Primary','TASKS'),
 (2,'Admin','TASKS');
 
-INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,LOG_FILE,QMan_Description)
+INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,REGISTRATION_STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,LOG_FILE,QMan_Description)
 VALUES
-(1,1,1,2,1,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Primary TASK Queue Manager'),
-(2,2,3,4,1,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Admin TASK Queue Manager');
+(1,1,1,2,1,7,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Primary TASK Queue Manager'),
+(2,2,3,4,1,7,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Admin TASK Queue Manager');
 
 INSERT INTO WORKFLOW_MANAGER_TYPE (ID,NAME,TABLENAME) 
 VALUES
 (1,'Primary','TASKS'),
 (2,'Admin','TASKS');
 
-INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,MAX_CONCURRENT_TASKS,LOG_FILE,WMan_Description)
+INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,REGISTRATION_STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,MAX_CONCURRENT_TASKS,LOG_FILE,WMan_Description)
 VALUES
-(1,1,5,6,1,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_1.log','Primary WorkFlow Manager'),
-(2,2,7,8,1,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_2.log','Admin WorkFlow Manager'),
-(9999,2,7,8,1,1,'localhost','127.0.0.1',300,300,9999,'NoLog','UnAssigned');
+(1,1,5,6,1,7,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_1.log','Primary WorkFlow Manager'),
+(2,2,7,8,1,7,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_2.log','Admin WorkFlow Manager'),
+(9999,2,7,8,1,7,1,'localhost','127.0.0.1',300,300,9999,'NoLog','UnAssigned');
 
 INSERT INTO PASSWORDS (ID,USERNAME,PASSWORD)
 VALUES
