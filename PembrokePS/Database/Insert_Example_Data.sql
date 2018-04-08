@@ -36,18 +36,18 @@ VALUES
 (5,'system.ResultsDirectory','c:\\PembrokePS\\Logs\\Tasks',11),
 (6,'system.RequiredModules','PembrokePSrest,PembrokePSutilities,PowerLumber,RestPS',11),
 (7,'system.RunLogLevel','DEBUG',11),
-(5,'system.LogDirectory','c:\\PembrokePS\\Logs',11);
+(8,'system.LogDirectory','c:\\PembrokePS\\Logs',11);
 
 INSERT INTO ENDPOINT_PORTS (ID,PORT,ENDPOINT_ASSIGNED_STATUS,ENDPOINT_STATUS) 
 VALUES
 (1,8001,7,8),
-(2,8002,7,8),
+(2,8002,13,8),
 (3,8003,7,8),
-(4,8004,7,8),
+(4,8004,13,8),
 (5,8005,7,8),
-(6,8006,7,8),
+(6,8006,13,8),
 (7,8007,7,8),
-(8,8008,7,8),
+(8,8008,13,8),
 (9,8009,13,1),
 (10,8010,13,1);
 
@@ -56,21 +56,21 @@ VALUES
 (1,'Primary','TASKS'),
 (2,'Admin','TASKS');
 
-INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,KICKER_PORT_ID,STATUS_ID,REGISTRATION_STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,LOG_FILE,QMan_Description)
+INSERT INTO QUEUE_MANAGER (ID,QUEUE_MANAGER_TYPE_ID,QMAN_PORT_ID,STATUS_ID,REGISTRATION_STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,LOG_FILE,QMan_Description)
 VALUES
-(1,1,1,2,1,7,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Primary TASK Queue Manager'),
-(2,2,3,4,1,7,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Admin TASK Queue Manager');
+(1,1,1,1,7,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Primary TASK Queue Manager'),
+(2,2,3,1,7,1,'localhost','127.0.0.1',30,30,'c:\\PembrokePS\\Logs\\qman\\qman_1.log','Admin TASK Queue Manager');
 
 INSERT INTO WORKFLOW_MANAGER_TYPE (ID,NAME,TABLENAME) 
 VALUES
 (1,'Primary','TASKS'),
 (2,'Admin','TASKS');
 
-INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,KICKER_PORT_ID,STATUS_ID,REGISTRATION_STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,MAX_CONCURRENT_TASKS,LOG_FILE,WMan_Description)
+INSERT INTO WORKFLOW_MANAGER (ID,WORKFLOW_MANAGER_TYPE_ID,WKFLW_PORT_ID,STATUS_ID,REGISTRATION_STATUS_ID,KICKER_STATUS_ID,HOSTNAME,IP_ADDRESS,WAIT,KICKER_WAIT,MAX_CONCURRENT_TASKS,LOG_FILE,WMan_Description)
 VALUES
-(1,1,5,6,1,7,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_1.log','Primary WorkFlow Manager'),
-(2,2,7,8,1,7,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_2.log','Admin WorkFlow Manager'),
-(9999,2,7,8,1,7,1,'localhost','127.0.0.1',300,300,9999,'NoLog','UnAssigned');
+(1,1,5,1,7,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_1.log','Primary WorkFlow Manager'),
+(2,2,7,1,7,1,'localhost','127.0.0.1',30,30,4,'c:\\PembrokePS\\Logs\\wman\\wman_2.log','Admin WorkFlow Manager'),
+(9999,2,7,1,7,1,'localhost','127.0.0.1',300,300,9999,'NoLog','UnAssigned');
 
 INSERT INTO PASSWORDS (ID,USERNAME,PASSWORD)
 VALUES
