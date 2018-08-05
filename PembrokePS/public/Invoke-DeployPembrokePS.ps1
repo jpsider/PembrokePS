@@ -26,7 +26,7 @@ function Invoke-DeployPembrokePS
     ## UserInterface
     ## PSRest
     write-output "Hello World - this function is not complete."
-    # Optional - 
+    # Optional -
     ## Alert
     ## Qman
     ## Sched
