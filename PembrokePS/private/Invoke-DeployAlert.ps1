@@ -25,7 +25,7 @@ function Invoke-DeployAlert
     catch
     {
         $ErrorMessage = $_.Exception.Message
-        $FailedItem = $_.Exception.ItemName		
+        $FailedItem = $_.Exception.ItemName
         Write-Error "Error: $ErrorMessage $FailedItem"
         BREAK
     }
